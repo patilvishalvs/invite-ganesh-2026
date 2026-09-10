@@ -39,7 +39,7 @@ h1{font-size:clamp(32px,7vw,58px);line-height:1.2;margin:10px 0;color:#fffdf5;te
 <p class="intro" id="intro">We warmly invite you and your family to join us for the blessings (Darshan) of <strong>Shree Ganapati Bappa</strong> in our home. Your presence and blessings will make this auspicious celebration truly special.</p>
 <div class="events">
 <article class="event"><div class="icon">🙏</div><h2 id="ev1h2">Ganesh Darshan</h2><div class="date">14 – 15 September 2026</div><div class="time" id="ev1time">Celebration and darshan across two days</div></article>
-<article class="event"><div class="icon">🪔</div><h2 id="ev2h2">Satya Narayana Puja</h2><div class="date">14 September 2026</div><div class="time" id="ev2time"><strong>7:00 PM onward</strong></div></article>
+<article class="event"><div class="icon">🪔</div><h2 id="ev2h2">Satya Narayana Prasad</h2><div class="date">14 September 2026</div><div class="time" id="ev2time"><strong>7:00 PM onward</strong></div></article>
 </div>
 <div class="highlight"><strong>✨ गणपती बाप्पा मोरया ✨</strong><br><span id="highlightText">Come, seek Bappa's blessings and celebrate together.</span></div>
 <div class="count"><div class="box"><b id="d">--</b><span id="labelD">Days</span></div><div class="box"><b id="h">--</b><span id="labelH">Hours</span></div><div class="box"><b id="m">--</b><span id="labelM">Minutes</span></div><div class="box"><b id="s">--</b><span id="labelS">Seconds</span></div></div>
@@ -60,7 +60,7 @@ const T={
     intro:'We warmly invite you and your family to join us for the blessings (Darshan) of <strong>Shree Ganapati Bappa</strong> in our home. Your presence and blessings will make this auspicious celebration truly special.',
     ev1h2:"Ganesh Darshan",
     ev1time:"Celebration and darshan across two days",
-    ev2h2:"Satya Narayana Puja",
+    ev2h2:"Satya Narayana Prasad",
     ev2time:"<strong>7:00 PM onward</strong>",
     highlightText:"Come, seek Bappa's blessings and celebrate together.",
     labelD:"Days",labelH:"Hours",labelM:"Minutes",labelS:"Seconds",
@@ -69,8 +69,8 @@ const T={
     hostLabel:"Hosted by:",
     hostName:"Vishal &amp; Monali Patil",
     venueLabel:"Venue:",
-    icsSummary1:"Satya Narayana Puja",
-    icsDesc1:"Satya Narayana Puja - 14 September 2026, 7 PM onward",
+    icsSummary1:"Satya Narayana Prasad",
+    icsDesc1:"Satya Narayana Prasad - 14 September 2026, 7 PM onward",
     icsSummary2:"Ganesh Darshan",
     icsDesc2:"Ganesh Darshan - 14 to 15 September 2026"
   },
@@ -82,7 +82,7 @@ const T={
     intro:'आम्ही तुम्हाला व तुमच्या परिवाराला <strong>श्री गणपती बाप्पांच्या</strong> आशीर्वादासाठी (दर्शनासाठी) आमच्या घरी सस्नेह आमंत्रित करत आहोत. तुमची उपस्थिती व आशीर्वाद या मंगल प्रसंगाची शोभा वाढवतील.',
     ev1h2:"गणेश दर्शन",
     ev1time:"दोन दिवस उत्सव आणि दर्शन",
-    ev2h2:"सत्यनारायण पूजा",
+    ev2h2:"सत्यनारायण प्रसाद",
     ev2time:"<strong>सायंकाळी ७:०० पासून</strong>",
     highlightText:"चला, बाप्पाचे आशीर्वाद घेऊया आणि एकत्र उत्सव साजरा करूया.",
     labelD:"दिवस",labelH:"तास",labelM:"मिनिटे",labelS:"सेकंद",
@@ -91,8 +91,8 @@ const T={
     hostLabel:"यजमान:",
     hostName:"विशाल आणि मोनाली पाटील",
     venueLabel:"ठिकाण:",
-    icsSummary1:"सत्यनारायण पूजा",
-    icsDesc1:"सत्यनारायण पूजा - १४ सप्टेंबर २०२६, सायंकाळी ७ पासून",
+    icsSummary1:"सत्यनारायण प्रसाद",
+    icsDesc1:"सत्यनारायण प्रसाद - १४ सप्टेंबर २०२६, सायंकाळी ७ पासून",
     icsSummary2:"गणेश दर्शन",
     icsDesc2:"गणेश दर्शन - १४ ते १५ सप्टेंबर २०२६"
   }
@@ -134,7 +134,7 @@ function ics(){
   "BEGIN:VEVENT","DTSTART:20260914T190000","DTEND:20260914T220000",
   "SUMMARY:"+t.icsSummary1,"DESCRIPTION:"+t.icsDesc1,
   "LOCATION:505\\, Space Enclave\\, Sector 4\\, Karanjade","END:VEVENT",
-  "BEGIN:VEVENT","DTSTART;VALUE=DATE:20260914","DTEND;VALUE=DATE:20260915",
+  "BEGIN:VEVENT","DTSTART;VALUE=DATE:20260914","DTEND;VALUE=DATE:20260916",
   "SUMMARY:"+t.icsSummary2,"DESCRIPTION:"+t.icsDesc2,
   "LOCATION:505\\, Space Enclave\\, Sector 4\\, Karanjade","END:VEVENT","END:VCALENDAR"].join("\r\n");
   let u=URL.createObjectURL(new Blob([x],{type:"text/calendar"})),a=document.createElement("a");

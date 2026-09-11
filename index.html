@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -292,7 +293,7 @@
         </div>
 
         <div class="countdown-box">
-          <p class="countdown-label" id="countdown-label">Countdown to Darshan</p>
+          <p class="countdown-label" id="countdown-label">Countdown to Shree Ganesh Darshan</p>
           <div class="countdown" id="countdown">
             <div class="countdown-unit"><div class="countdown-number" id="days">--</div><div class="countdown-text">Days</div></div>
             <div class="countdown-unit"><div class="countdown-number" id="hours">--</div><div class="countdown-text">Hours</div></div>
@@ -301,11 +302,7 @@
           </div>
 
           <div class="btn-row">
-            <a class="btn btn-gold" id="google-prasad" href="#" target="_blank" rel="noopener noreferrer">GOOGLE: SATYANARAYAN PRASAD</a>
-            <a class="btn btn-gold" id="google-darshan" href="#" target="_blank" rel="noopener noreferrer">GOOGLE: GANESH DARSHAN</a>
-          </div>
-          <div class="btn-row">
-            <button class="btn btn-maroon" id="download-ics" type="button">APPLE / OUTLOOK (.ICS) — BOTH EVENTS</button>
+            <button class="btn btn-maroon" id="download-ics" type="button">ADD TO CALENDAR</button>
           </div>
         </div>
 
@@ -327,13 +324,16 @@
   <script>
     const ADDRESS = "505, Space Enclave, Sector 4, Karanjade, Panvel.";
 
-    // 14 Sep 2026, 7:00 PM IST -> 13:30 UTC
-    const PRASAD_START = new Date(Date.UTC(2026, 8, 14, 13, 30, 0));
-    const PRASAD_END = new Date(Date.UTC(2026, 8, 14, 17, 30, 0));
-
-    // 15 Sep 2026, 11:00 AM IST -> 04:30 UTC
+    // Event times are in IST (UTC+05:30).
+    // Shree Ganesh Darshan: 14 Sep 2026, 11:00 AM IST -> 05:30 UTC
     const DARSHAN_START = new Date(Date.UTC(2026, 8, 14, 5, 30, 0));
-    const DARSHAN_END = new Date(Date.UTC(2026, 8, 15, 12, 30, 0));
+    // Darshan continues through 15 Sep 2026, 11:00 AM IST.
+    const DARSHAN_END = new Date(Date.UTC(2026, 8, 15, 5, 30, 0));
+
+    // Satyanarayan Prasad: 14 Sep 2026, 7:00 PM IST -> 13:30 UTC.
+    // No end time was specified, so the calendar entry uses a 1-hour default duration.
+    const PRASAD_START = new Date(Date.UTC(2026, 8, 14, 13, 30, 0));
+    const PRASAD_END = new Date(Date.UTC(2026, 8, 14, 14, 30, 0));
 
     const EVENTS = [
       {
@@ -354,17 +354,6 @@
 
     function stamp(d) {
       return d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
-    }
-
-    function googleUrl(event) {
-      const p = new URLSearchParams({
-        action: "TEMPLATE",
-        text: event.title,
-        dates: `${stamp(event.start)}/${stamp(event.end)}`,
-        details: event.details,
-        location: ADDRESS,
-      });
-      return `https://calendar.google.com/calendar/render?${p.toString()}`;
     }
 
     function downloadIcs() {
@@ -405,7 +394,9 @@
     }
 
     function updateCountdown() {
-      const left = PRASAD_START.getTime() - Date.now();
+      // Countdown is specifically to Shree Ganesh Darshan start:
+      // 14 Sep 2026, 11:00 AM IST.
+      const left = DARSHAN_START.getTime() - Date.now();
       const label = document.getElementById("countdown-label");
       if (left <= 0) {
         label.textContent = "Bappa is here";
@@ -421,8 +412,6 @@
       document.getElementById("seconds").textContent = String(s % 60).padStart(2, "0");
     }
 
-    document.getElementById("google-prasad").href = googleUrl(EVENTS[0]);
-    document.getElementById("google-darshan").href = googleUrl(EVENTS[1]);
     document.getElementById("download-ics").addEventListener("click", downloadIcs);
 
     updateCountdown();
